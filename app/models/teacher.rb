@@ -13,11 +13,10 @@ class Teacher < ApplicationRecord
   validates :teacher_password, presence: true, length: { minimum: 6 }, allow_nil: true
   # the password confirmation is not implemented
   #validates :teacher_password_confirmation, presence: true, length: { minimum: 6 }, allow_nil: true
-  
 
-    has_many :active_relationships, class_name:  "RosterStudent",
-                                    foreign_key: "teacher_id",
-                                    dependent:   :destroy
+  has_many :active_relationships, class_name:  "RosterStudent",
+                                  foreign_key: "teacher_id",
+                                  dependent:   :destroy
     
-    has_many :students, through: :active_relationships, source: :student
+  has_many :students, through: :active_relationships, source: :student
 end
