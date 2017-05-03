@@ -1,3 +1,7 @@
+#extra notes for Tommy B:
+#   rails server -b $IP -p $PORT
+
+# author: Tommy B
 class TeachersController < ApplicationController
   before_action :set_teacher, only: [:show, :edit, :update, :destroy]
 
@@ -10,6 +14,7 @@ class TeachersController < ApplicationController
   # GET /teachers/1
   # GET /teachers/1.json
   def show
+    #@teacher = Teacher.find(params[:id])
   end
 
   # GET /teachers/new
