@@ -12,13 +12,20 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :student_name %>
+    <%= f.text_field :student_name %>
+  </div>
+  
+  <div class="field">
     <%= f.label :student_icon_name %>
     <%= f.text_field :student_icon_name %>
   </div>
 
   <div class="field">
     <%= f.label :student_contact_info %>
-    <%= f.text_field :student_contact_info %>
+    <%= f.select :student_contact_info, ['bug', 'car','puzzle-piece','flash',
+    'flask','futbol-o','gamepad','heart','leaf','paper-plane','paw','star',
+    'graduation-cap']%>
   </div>
 
   <div class="field">
@@ -33,18 +40,15 @@
 
   <div class="field">
     <%= f.label :color %>
-    <%= f.text_field :color %>
+    <%= f.select :color, ['grey', 'navy','red','yellow',
+    'ligh blue','light orange','green','lavendar','plum','mint','pink',
+    'dark orange','aqua']%>
   </div>
 
-  <div class="field">
-    <%= f.label :school_id %>
-    <%= f.number_field :school_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :student_name %>
-    <%= f.text_field :student_name %>
-  </div>
+  <!--<div class="field">-->
+  <!--  <%= f.label :school_id %>-->
+  <!--  <%= f.number_field :school_id %>-->
+  <!--</div>-->
 
   <div class="actions">
     <%= f.submit %>
