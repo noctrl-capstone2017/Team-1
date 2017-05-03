@@ -1,5 +1,3 @@
-require 'faker'
-
 Teacher.create!(user_name: "test",
                 teacher_icon_name: "test1",
                 teacher_name: "Test Teacher",
@@ -17,7 +15,7 @@ Teacher.create!(user_name: "test",
   username = "example-#{n+1}"
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
-  User.create!(user_name: username,
+  Teacher.create!(user_name: username,
                 teacher_icon_name: "test1",
                 teacher_name: name,
                 teacher_email: email,
