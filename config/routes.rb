@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "teachers/home"
   resources :roster_students
   resources :roster_squares
   resources :session_events

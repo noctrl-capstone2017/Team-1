@@ -1,0 +1,101 @@
+
+<!-- page header -->
+<div class="page-header vertical-align">
+	<div class="col-xs-11">
+		<h2>Home<small> - student roster for teacher Bianca17</small></h2><!-- Dynamically fills in with school id -->
+	</div>
+	<div class="col-xs-1 pull-right">
+		<div class="header-sq i-plum" >
+			<span class="fa fa-apple fa-3x teacher-icon"></span>
+		</div>
+	</div>
+</div><!--End page header-->
+
+<!--Student Roster Area -->
+<div id="student-roster"> <!--Student display area: shows the last 8 students teacher worked with -->
+	<div class="row students-row">
+		<div class="col-xs-3 text-center">
+		 <div class ="square i-red center-block">
+			 <span class="fa fa-bicycle fa-5x student-icon "></span>
+		  </div>
+		  <p><span class="student-icon-text">Jimmy</span></p>
+		</div>
+		<div class="col-xs-3 text-center">
+			<div class ="square i-navy center-block">
+				<span class="fa fa-child fa-5x student-icon"></span>
+			</div>
+			<p><span class="student-icon-text">TateM</span></p>
+		</div>   <!-- col -->
+		<div class="col-xs-3 text-center">
+			<div class ="square i-yellow center-block">
+				<span class="fa fa-futbol-o fa-5x student-icon"></span>
+			</div>
+			<p><span class="student-icon-text">SarahL2</span></p>
+		</div>   <!-- col -->
+		<div class="col-xs-3 text-center">
+			<div class ="square i-ltblue center-block">
+				<span class="fa fa-leaf fa-5x student-icon"></span>
+			</div>
+			<p><span class="student-icon-text">AllyW</span></p>
+		</div>   <!-- col -->
+	</div>   <!-- row -->
+	<div class="row students-row">
+		<div class="col-xs-3 text-center">
+			<div class ="square i-pink center-block">
+				<span class="fa fa-gamepad fa-5x student-icon"></span>
+			</div>
+			<p><span class="student-icon-text">EugeneB</span></p>
+		</div>   <!-- col -->
+		<div class="col-xs-3 text-center">
+			<div class =" square i-lavendar center-block">
+				<span class="fa fa-paper-plane fa-5x student-icon "></span>
+			</div>
+			<p><span class="student-icon-text">LexiP</span></p>
+		</div>	<!-- col -->
+		<div class="col-xs-3 text-center">
+			<div class ="square i-dkorange center-block">
+				<span class="fa fa-flash fa-5x student-icon"></span>
+			</div>
+			<p><span class="student-icon-text">JohnnyV</span></p>
+		</div>   <!-- col -->
+		<div class="col-xs-3 text-center">
+			<div class ="square i-green center-block">
+				<span class="fa fa-car fa-5x student-icon"></span>
+			</div>
+			<p><span class="student-icon-text ">WillieP</span></p>
+		</div>   <!-- col -->
+	</div>   <!-- row -->
+</div> <!--End Student Roster -->
+<!-- Search Form should populate with student name on selection -->
+<!-- All students who are assigned to teacher will populate here -->
+<!-- horizontal form help from:	www.w3schools.com/bootstrap/bootstrap_forms.asp -->
+<div class="row">
+	<form class="form-horizontal text-center action-buttons-row">
+		<div class="col-sm-offset-3">
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="email">Student:</label>
+				<div class="col-sm-4">
+					<select class="form-control" id="studSelect">
+						<option>Jimmy</option>
+						<option>WillieP</option>
+						<option>TateM</option>
+						<option>SarahL2</option>
+						<option>AllyW</option>
+						<option>EugeneB</option>
+						<option>LexiP</option>
+						<option>EugeneB</option>
+						<option>JohnnyV</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="form-group"> 
+			<div class="col-xs-3 text-center col-xs-offset-3">
+				<a href="session1.html" type="submit" class="btn btn-lg btn-primary"><i class="fa fa-clock-o"></i> Start Session</a>
+			</div>
+			<div class="col-xs-3 text-center">
+				<a href="analysis1.html" type="submit" class="btn btn-lg btn-success"><i class="fa fa-line-chart"></i> Analyze Sessions</a>
+			</div>
+		</div>
+	</form>
+</div>   <!-- row -->
