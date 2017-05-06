@@ -16,13 +16,13 @@ Teacher.create!(user_name: "test",
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
   Teacher.create!(user_name: username,
-                teacher_icon_name: "test1",
+                teacher_icon_name: "apple",
                 teacher_name: name,
                 teacher_email: email,
                 admin_powers: "false",
                 analysis_powers: "false",
                 teacher_description: "Teacher used for testing",
-                color: "red",
+                color: "plum",
                 school_id: 1,
                 teacher_password: password,
                 teacher_password_confirmation: password)
