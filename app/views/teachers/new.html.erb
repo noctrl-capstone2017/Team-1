@@ -1,107 +1,106 @@
+
 <div class="page-header cap17-header vertical-align">
-				<div class="col-xs-11">
-					<h2>New Teacher <small>- add a new teacher to TPTE</small></h2>
-				</div>
-				<div class="col-xs-1 ">
-					<div class="header-sq i-ltblue" >
-						<span class="fa fa-home fa-3x teacher-icon "></span>
-					</div>
-				</div>
-			</div>
+  <div class="col-xs-11">
+    <h2>New Teacher <small>- add a new teacher to TPTE</small></h2>
+  </div>
+  <div class="col-xs-1 ">
+    <div class="header-sq i-ltblue" >
+	  <span class="fa fa-home fa-3x teacher-icon "></span>
+	</div>
+  </div>
+</div>
+
+<%= form_for(@teacher) do |f| %>
 <!-- Teacher profile area -->
-     	<form class="form-horizontal" action="teacher1.html">
+     	<!--<form class="form-horizontal">-->
+     		
+     		<!-- Teacher ID -->
      		<div class="row form-row">
-     			<!-- Teacher ID -->
     			<div class="col-sm-2 col-sm-offset-1"><h4> Teacher ID: </h4></div>
                 <div class="col-sm-2">
-    				<input type="id" class="form-control" id="teacherID">
+    				<%= f.text_field :user_name %>
     			</div>
     		</div>
     		
     		<!-- Teacher name field -->
     		<div class="row form-row">
-       		<div class="col-xs-1 col-xs-offset-1"><h4>Name: </h4></div>
+       		<div class="col-xs-1 col-xs-offset-1"><h4> Name: </h4></div>
        		<div class="col-xs-4 col-xs-offset-1">
-    				<input type="name" class="form-control" id="teacherName" placeholder="">
+    				<%= f.text_field :teacher_name %>
     			</div>
     		</div>   <!-- row -->
     		
-           <!-- Teacher Email -->
+    		<!-- Teacher Email -->
             <div class="row form-row">
-    			<div class="col-sm-offset-1 col-sm-2"><h4>Email: </h4></div>
+    			<div class="col-sm-offset-1 col-sm-2"><h4> Email: </h4></div>
     
     			<div class="col-sm-4 col-sm-offset-0">
-    				<input type="email" class="form-control" id="email">
+    				<%= f.text_field :teacher_email %>
    				</div>
     		</div>
-           
-            <!-- Teacher password -->
+    		
+    		<!-- Teacher password -->
     		<div class="row form-row">
-    			<div class="col-sm-offset-1 col-sm-2"><h4>Password: </h4></div>
+    			<div class="col-sm-offset-1 col-sm-2"><h4> Password: </h4></div>
     
     			<div class="col-sm-4 col-sm-offset-0">
-    				<input type="password" class="form-control" id="password">
+    				<%= f.text_field :teacher_password %>
     			</div>
     		</div>
     		
-           <!--Teacher Admin -->
+    		<!-- Teacher Admin -->
             <div class="row form-row vertical-align">
-    			<div class="col-sm-offset-3 col-sm-2"><h4>Admin</h4></div>
+    			<div class="col-sm-offset-3 col-sm-2"><h4> Admin </h4></div>
         		
-                <input type="checkbox" checked="true" class="col-sm-1">
+                <%= f.check_box :admin_powers %>
         
-        		<div class="col-sm-offset-0 col-sm-2"><h4>Analysis </h4></div>
+        		<div class="col-sm-offset-0 col-sm-2"><h4> Analysis </h4></div>
          		
-                <input type="checkbox" checked="true" class="col-sm-1">
+                <%= f.check_box :analysis_powers %>
     		</div>
     		
     		<!-- a little extra space after name/email -->
 			<div class="form-spacer">	&nbsp;</div>
-    
-    		<div class="row form-row vertical-align">
-    			<div class="col-sm-offset-1 col-sm-2"><h4>Color: </h4></div>
+			
+			<!-- Teacher Color -->
+			<div class="row form-row vertical-align">
+    			<div class="col-sm-offset-1 col-sm-2"><h4> Color: </h4></div>
     
     			<div class="col-sm-4 col-sm-offset-0">
-    				<select name="colors">
-    					<option value="purple">Purple</option>
-    					<option value="Red">Red</option>
-    					<option value="Yellow">Yellow</option>
-    					<option value="cyan">Cyan</option>
-  					</select>
+    				<%= f.select :color, [ 'plum', 'red', 'yellow', 'cyan'], :prompt => 'Select One' %>
         		</div>
        		</div>
-     
-     		<!-- teacher icon field -->
+       		
+       		<!-- Teacher Icon Field -->
 			<div class="row form-row">
 				<div class="col-xs-1 col-xs-offset-1"><h4>Icon: </h4></div>
 				<div class="col-xs-4 col-xs-offset-1">
-					<select name="icons">
-						<option value="Apple">Apple</option>
-						<option value="GraduationHat">Graduation Hat</option>
-						<option value="Book">Book</option>
-						<option value="Pencil">Pencil</option>
-					</select>
+					<%= f.select :teacher_icon_name, [ 'apple', 'graduationHat', 'book', 'pencil'], :prompt => 'Select One' %>
 				</div>
 			</div>
-   		
-    		<div class="row form-row">
+			
+			<div class="row form-row">
     			<div class="col-sm-offset-1 col-sm-2"><h4>Description: </h4></div>
     
     			<div class="col-sm-6 col-sm-offset-0">
-    				<textarea type="description" class="form-control" id="Description"></textarea>
+    				<%= f.text_area :teacher_description %>
     			</div>
     		</div>  
      
      		<div class="row form-row">
     			<div class="col-sm-1 col-sm-offset-1"><br></div>
     		</div>
-    
+    		
     		<div class="row action-buttons-row">
-   				<div class="col-sm-1 col-sm-offset-1"> 
-            		<button type="submit" class="btn btn-success">Add New Teacher</button>
-            	</div>
-    			<div class="col-sm-1 col-sm-offset-1"> 
-            		<button type="submit" class="btn btn-danger">Cancel</button>
-            	</div>
-    		</div>
-    	</form>
+    			<div class="col-sm-1 col-sm-offset-1">
+    				<%= f.submit %>
+    			</div>
+    			<div class="col-sm-1 col-sm-offset-1">
+    				<%= link_to 'Cancel', teachers_path %>
+    			</div>
+  			</div>
+<% end %>
+
+<div class="row form-row">
+	<div class="col-sm-1 col-sm-offset-1"><br></div>
+</div>
