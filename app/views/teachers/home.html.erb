@@ -74,26 +74,20 @@
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="email">Student:</label>
 				<div class="col-sm-4">
-					<select class="form-control" id="studSelect">
-						<option>Jimmy</option>
-						<option>WillieP</option>
-						<option>TateM</option>
-						<option>SarahL2</option>
-						<option>AllyW</option>
-						<option>EugeneB</option>
-						<option>LexiP</option>
-						<option>EugeneB</option>
-						<option>JohnnyV</option>
-					</select>
+					<%= select_tag 'student_id', options_from_collection_for_select(@teacher.students, 'id', 'student_name'), {:required => true} %>
 				</div>
 			</div>
 		</div>
 		<div class="form-group"> 
 			<div class="col-xs-3 text-center col-xs-offset-3">
-				<a href="session1.html" type="submit" class="btn btn-lg btn-primary"><i class="fa fa-clock-o"></i> Start Session</a>
+				<%= button_tag(type: 'submit', class: "btn btn-lg btn-primary", name: 'start_session') do %>
+					<i class="fa fa-clock-o"></i>  Start Session
+				<% end %>
 			</div>
 			<div class="col-xs-3 text-center">
-				<a href="analysis1.html" type="submit" class="btn btn-lg btn-success"><i class="fa fa-line-chart"></i> Analyze Sessions</a>
+				<%= button_tag(type: 'submit', class: "btn btn-lg btn-success", name: 'analyze') do %>
+					<i class="fa fa-line-chart"></i> Analyze Sessions
+				<% end %>
 			</div>
 		</div>
 	</form>
