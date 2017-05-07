@@ -14,7 +14,7 @@ class TeachersController < ApplicationController
   # GET /teachers/1
   # GET /teachers/1.json
   def show
-    #@teacher = Teacher.find(params[:id])
+    @teacher = Teacher.find(params[:id])
   end
 
   # GET /teachers/new
@@ -76,4 +76,11 @@ class TeachersController < ApplicationController
     def teacher_params
       params.require(:teacher).permit(:user_name, :teacher_icon_name, :teacher_name, :teacher_email, :admin_powers, :analysis_powers, :teacher_description, :color, :school_id, :teacher_password, :teacher_password_confirmation)
     end
+    
+      # RH
+      # Confirms an admin user.
+    def admin_user
+        redirect_to(root_url) unless current_user.admin_powers?
+    end
+    
 end

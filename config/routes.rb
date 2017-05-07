@@ -11,5 +11,8 @@ Rails.application.routes.draw do
   resources :teachers
   resources :schools
   resources :login_session
+  resources :super
+  get    '/super_report',    to: 'super#super_report'
+  get    '/admin',    to: 'teachers#admin'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -34,6 +34,7 @@
         <td><%= teacher.school_id %></td>
         <td><%= teacher.teacher_password %></td>
         <td><%= teacher.teacher_password_confirmation %></td>
+        <td>Super ID: <%= teacher.super_id %></td>
         <td><%= link_to 'Show', teacher %></td>
         <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
         <td><%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>

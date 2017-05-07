@@ -1,6 +1,16 @@
+<!-- Changed by RH -->
 <p id="notice"><%= notice %></p>
 
-<h1>Schools</h1>
+<h1>Super Dashboard</h1>
+<h3>View/Edit all Schools in Dinner Out</h3>
+<%= link_to 'New School', new_school_path %>
+
+<select>
+<% @schools.each do |school| %>
+<option> <%= school.school_name %></option>
+<% end %>
+</select>
+<input type="submit" value ="Change Focus School">
 
 <table>
   <thead>
@@ -30,8 +40,10 @@
       </tr>
     <% end %>
   </tbody>
+
 </table>
 
 <br>
 
-<%= link_to 'New School', new_school_path %>
+<%= link_to 'Super Report', super_report_path %>
+
