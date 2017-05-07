@@ -24,6 +24,7 @@ class TeachersController < ApplicationController
 
   # GET /teachers/1/edit
   def edit
+    @teacher = Teacher.find(params[:id])
   end
 
   # POST /teachers

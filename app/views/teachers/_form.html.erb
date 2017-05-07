@@ -1,3 +1,8 @@
+<!-- Note from Tommy B: please don't edit this file! -->
+<!-- Note from Tommy B: please don't edit this file! -->
+<!-- Note from Tommy B: please don't edit this file! -->
+<!-- Note from Tommy B: please don't edit this file! -->
+
 <%= form_for(teacher) do |f| %>
   <% if teacher.errors.any? %>
     <div id="error_explanation">
@@ -9,6 +14,7 @@
       </ul>
     </div>
   <% end %>
+  
   <div class="field">
     <%= f.label :user_name %>
     <%= f.text_field :user_name %>
@@ -45,7 +51,6 @@
     <%= f.label :school_id %>
     <%= f.number_field :school_id %>
   </div>
-<<<<<<< HEAD
   <div class="field">
     <%= f.label :teacher_password %>
     <%= f.text_field :teacher_password %>
@@ -54,8 +59,6 @@
     <%= f.label :teacher_password_confirmation %>
     <%= f.text_field :teacher_password_confirmation %>
   </div>
-=======
->>>>>>> Team-2/master
   <div class="actions">
     <%= f.submit %>
   </div>
