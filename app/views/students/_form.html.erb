@@ -1,3 +1,5 @@
+<!--created by: Michael Loptien-->
+
 <%= form_for(student) do |f| %>
   <% if student.errors.any? %>
     <div id="error_explanation">
@@ -11,46 +13,82 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :student_name %>
-    <%= f.text_field :student_name %>
+<!-- Show Student ID field -->
+  <div class="row form-row">
+    <div class="col-xs-2 col-xs-offset-1"><h4> Student ID: </h4></div>
+    <div class="col-xs-2">
+      <%= f.text_field :student_icon_name, class: "form-control" %>	
+    </div>
   </div>
   
-  <div class="field">
-    <%= f.label :student_icon_name %>
-    <%= f.text_field :student_icon_name %>
+<!-- Show Student Name field -->
+  <div class="row form-row">
+    <div class="col-xs-1 col-xs-offset-1"><h4>Name: </h4></div>
+    <div class="col-xs-4 col-xs-offset-1">
+      <%= f.text_field :student_name, class: "form-control"  %>    				
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :student_contact_info %>
-    <%= f.select :student_contact_info, ['bug', 'car','puzzle-piece','flash',
-    'flask','futbol-o','gamepad','heart','leaf','paper-plane','paw','star',
-    'graduation-cap']%>
+  <div class="" form-spacer="">	&nbsp;</div>
+
+<!-- Show Student Color Field -->
+  <div class="row form-row">
+		<div class="col-xs-1 col-xs-offset-1">
+		  <h4>Color: </h4></div>
+		<div class="col-xs-4 col-xs-offset-1">
+      <%= f.select :color, ['gray', 'navy','red','yellow',
+      ['ligh blue', 'ltblue'],['light orange','ltorange'],'green','lavendar','plum','mint','pink',
+      ['dark orange','dkorange'],'aqua']%>
+		</div>
+	</div>
+
+<!-- Show Student Icon Field -->
+  <div class="row form-row">
+    <div class="col-xs-1 col-xs-offset-1"><h4>Icon: </h4></div>
+    <div class="col-xs-4 col-xs-offset-1">
+      <%= f.select :student_icon, ['bug', 'car','puzzle-piece','flash',
+      'flask',['soccer ball','futbol-o'],'gamepad','heart','leaf','paper-plane','paw','star',
+      'graduation-cap'] %>
+  	</div>
   </div>
 
-  <div class="field">
-    <%= f.label :student_description %>
-    <%= f.text_area :student_description %>
-  </div>
+<!-- Show Student Contact Info -->  
+	<div class="row form-row">
+		<div class="col-xs-1 col-xs-offset-1"><h4>Contact Info: </h4></div>
+		<div class="col-xs-6 col-xs-offset-1">
+      <%= f.text_area :student_contact_info, class: "form-control"  %>
+		</div>
+	</div>
 
-  <div class="field">
-    <%= f.label :student_icon %>
-    <%= f.text_field :student_icon %>
-  </div>
+<!-- Show Student Description Field -->
+	<div class="row form-row">
+		<div class="col-xs-1 col-xs-offset-1"><h4>Description: </h4></div>
+		<div class="col-xs-6 col-xs-offset-1">
+		  <%= f.text_area :student_description, class: "form-control"  %>
+		</div>
+	</div>
 
-  <div class="field">
-    <%= f.label :color %>
-    <%= f.select :color, ['grey', 'navy','red','yellow',
-    'ligh blue','light orange','green','lavendar','plum','mint','pink',
-    'dark orange','aqua']%>
-  </div>
-
+<!-- This needs to be an invisible field pulling data from logged in teacher / admin -->
   <!--<div class="field">-->
   <!--  <%= f.label :school_id %>-->
   <!--  <%= f.number_field :school_id %>-->
   <!--</div>-->
 
-  <div class="actions">
-    <%= f.submit %>
+<!-- This area displays the save or cancel buttons
+ It uses an If statment to test a passed in value "isNew"
+ to determine which button text will show -->
+  <div class="row action-buttons-row">
+	  <div class="col-xs-6 col-xs-offset-1 text-center"> 
+      <% if local_assigns[:isNew] %>
+        <%= f.submit "Add New Student", class: "btn btn-success"%>
+						&nbsp; &nbsp; &nbsp;
+	      <%= link_to 'Cancel', students_path, class: "btn btn-danger" %>
+      <% else %>
+        <%= f.submit "Save Changes", class: "btn btn-success"%>
+						&nbsp; &nbsp; &nbsp;
+	      <%= link_to 'Cancel', students_path, class: "btn btn-danger" %>        
+      <% end %>
+	    
+    </div>
   </div>
 <% end %>

@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170505220223) do
+=======
+ActiveRecord::Schema.define(version: 20170505191352) do
+>>>>>>> b8436d0a2289222492ff0043c064259221854941
 
   create_table "roster_squares", force: :cascade do |t|
     t.integer  "square_id"
@@ -89,9 +93,15 @@ ActiveRecord::Schema.define(version: 20170505220223) do
     t.integer  "school_id"
     t.string   "teacher_password"
     t.string   "teacher_password_confirmation"
+<<<<<<< HEAD
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
     t.string   "remember_digest"
+=======
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+    t.integer  "super_id",                      default: 0
+>>>>>>> b8436d0a2289222492ff0043c064259221854941
   end
 
 end

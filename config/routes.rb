@@ -5,6 +5,7 @@
 Rails.application.routes.draw do
   root "login_session#new"
   
+  #get "teachers/:id/home",  to: 'teachers#home'
   resources :roster_students
   resources :roster_squares
   resources :session_events
