@@ -8,6 +8,8 @@ class LoginSessionController < ApplicationController
   # login page
   def new
   end
+  
+  
 
   # logs in the teacher if successful, flashes a danger if invalid log in info
   def create

@@ -84,7 +84,7 @@
 	</div>
 	<div id="navbar" class="collapse navbar-right navbar-collapse">
 		<ul class="nav navbar-nav ">
-			<li><a href="index.html">Back to Login</a></li>
+			<li><%= link_to "Back to Login", login_path%></li>
 		</ul>
 	</div>		<!-- end nav-collapse -->
 </div>		<!-- end navbar -->
@@ -120,7 +120,7 @@
                 printDescription();
             </script>
 						<br>
-						<a href="logout2.html">About our student art</a>
+						<a <%= link_to "About Our Student Art", about2_path%></a>
 					</p>
 				</div>
 			</div>   <!-- col -->
