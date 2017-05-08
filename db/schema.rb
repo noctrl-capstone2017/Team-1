@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170501225519) do
+ActiveRecord::Schema.define(version: 20170505220223) do
 
   create_table "roster_squares", force: :cascade do |t|
     t.integer  "square_id"
@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(version: 20170501225519) do
     t.string   "teacher_password_confirmation"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+    t.string   "remember_digest"
   end
 
 end

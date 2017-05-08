@@ -1,0 +1,87 @@
+<!--               Logout Page                -->
+<!--    Random student Art & description      -->
+<!--            By: Meagan Moore              -->
+
+<HTML>
+  <HEAD>
+    <script type="text/javascript" language="JavaScript">
+      var imgs = code that gets all images
+      var imgArray = [];
+      
+      // fill an array with all student art images
+      for (var i=0; i=imgs[i]; i++)
+      {
+        imgArray.push(i);
+      }
+      
+      // Generate random number from 1 to number of images
+        var num = Math.ceil(Math.random() * imgArray.length);
+        
+      var pictureName = imgArray[num];
+      var studentArt = pictureName.split('_'[1]);
+      var studentName = studentArt.split('.'[0]);
+        
+      // Parts of the image
+      Part1 = '<img src="/assets/images/student_art/art';
+      Part2 = num;
+      Part3 = '_'
+      Part4 = studentName;
+      Part5 = '.jpg">';
+      
+      // Pick and print a random image
+      function printImage() 
+      {
+        // Put the jpg name together
+        document.write(Part1 + Part2 + Part3 + Part4 + Part5);
+      }
+      
+      // Print out corresponding decsription
+      function printDescription()
+      {
+        document.write("Student Art by " + studentName);
+      }
+      
+    </script>
+  </HEAD>
+  
+  <BODY>
+    <!-- DinnerOut Logo & link back to login -->
+        <br>
+    <div style="position: relative; width: 1080px;">
+        <span>
+              <%= link_to image_tag("dinneroutLogo.png", alt: "DinnerOut Logo"),
+                  login_path %>
+        </span>
+      <div style="position: absolute; top: 0; right: 0; width: 100px; text-align:right;">
+        <span>
+            <%= link_to "Back to Login", login_path%>
+        </span>
+      </div>
+    </div>
+    
+    <!-- Title --> 
+    <h1>Logged Out</h1>
+    <p>You are now logged out. Thank you for using Dinner Out</p>
+    
+    <div class="container">
+      
+      <!-- Print out the random image -->
+      <script type="text/javascript" language="JavaScript">
+          printImage();
+      </script>
+      
+      <br>
+      
+      <!-- Print out the corresponding description -->
+      <script type="text/javascript" language="JavaScript">
+          printDescription();
+      </script>
+      
+      <br>
+      
+      <!-- Link to About2 page -->
+      <%= link_to "About our Student Art", about2_path%>
+    </div>
+    
+  </BODY>
+</HTML>
