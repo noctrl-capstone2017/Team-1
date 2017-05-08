@@ -1,4 +1,6 @@
+# Michael Loptien
 class Student < ApplicationRecord
+    # Ensures that none of the fields are empty
     validates :student_name, presence: true
     validates :student_icon_name, presence: true
     validates :student_description, presence: true

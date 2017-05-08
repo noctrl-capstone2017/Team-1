@@ -28,8 +28,8 @@ class SquaresController < ApplicationController
 
     respond_to do |format|
       if @square.save
-        format.html { redirect_to @square, notice: 'Square was successfully created.' }
-        format.json { render :show, status: :created, location: @square }
+        format.html { redirect_to squares_url, notice: 'Square was successfully created.' }
+        format.json { render :index, status: :created, location: @square }
       else
         format.html { render :new }
         format.json { render json: @square.errors, status: :unprocessable_entity }
@@ -42,8 +42,8 @@ class SquaresController < ApplicationController
   def update
     respond_to do |format|
       if @square.update(square_params)
-        format.html { redirect_to @square, notice: 'Square was successfully updated.' }
-        format.json { render :show, status: :ok, location: @square }
+        format.html { redirect_to squares_url, notice: 'Square was successfully updated.' }
+        format.json { render :index, status: :ok, location: @square }
       else
         format.html { render :edit }
         format.json { render json: @square.errors, status: :unprocessable_entity }

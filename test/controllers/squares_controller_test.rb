@@ -20,12 +20,7 @@ class SquaresControllerTest < ActionDispatch::IntegrationTest
       post squares_url, params: { square: { color: @square.color, school_id: @square.school_id, square_description: @square.square_description, square_id: @square.square_id, square_type: @square.square_type } }
     end
 
-    assert_redirected_to square_url(Square.last)
-  end
-
-  test "should show square" do
-    get square_url(@square)
-    assert_response :success
+    assert_redirected_to squares_url
   end
 
   test "should get edit" do
@@ -35,7 +30,7 @@ class SquaresControllerTest < ActionDispatch::IntegrationTest
 
   test "should update square" do
     patch square_url(@square), params: { square: { color: @square.color, school_id: @square.school_id, square_description: @square.square_description, square_id: @square.square_id, square_type: @square.square_type } }
-    assert_redirected_to square_url(@square)
+    assert_redirected_to squares_url
   end
 
   test "should destroy square" do
