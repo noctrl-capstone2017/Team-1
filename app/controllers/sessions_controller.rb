@@ -1,3 +1,5 @@
+#Author: Matthew O
+
 class SessionsController < ApplicationController
   before_action :set_session, only: [:show, :edit, :update, :destroy]
 
@@ -10,6 +12,7 @@ class SessionsController < ApplicationController
   # GET /sessions/1
   # GET /sessions/1.json
   def show
+    @student = Student.find(@session.session_student)
   end
 
   # GET /sessions/new
