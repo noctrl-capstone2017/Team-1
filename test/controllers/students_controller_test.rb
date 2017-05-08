@@ -20,12 +20,7 @@ class StudentsControllerTest < ActionDispatch::IntegrationTest
       post students_url, params: { student: { color: @student.color, school_id: @student.school_id, student_contact_info: @student.student_contact_info, student_description: @student.student_description, student_icon: @student.student_icon, student_icon_name: @student.student_icon_name, student_name: @student.student_name } }
     end
 
-    assert_redirected_to student_url(Student.last)
-  end
-
-  test "should show student" do
-    get student_url(@student)
-    assert_response :success
+    assert_redirected_to students_url
   end
 
   test "should get edit" do
@@ -35,7 +30,7 @@ class StudentsControllerTest < ActionDispatch::IntegrationTest
 
   test "should update student" do
     patch student_url(@student), params: { student: { color: @student.color, school_id: @student.school_id, student_contact_info: @student.student_contact_info, student_description: @student.student_description, student_icon: @student.student_icon, student_icon_name: @student.student_icon_name, student_name: @student.student_name } }
-    assert_redirected_to student_url(@student)
+    assert_redirected_to students_url
   end
 
   test "should destroy student" do
