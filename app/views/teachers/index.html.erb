@@ -1,27 +1,6 @@
 <!-- NEED TO ADD IMPLEMENTATION FOR TEACHER ICONS/TEACHER SHORT AND FULL NAMES -->
 
 <p id="notice"><%= notice %></p>
-
-<<<<<<< HEAD
-  <tbody>
-    <% @teachers.each do |teacher| %>
-      <tr>
-        <td><%= teacher.user_name %></td>
-        <td><%= teacher.teacher_icon_name %></td>
-        <td><%= teacher.teacher_name %></td>
-        <td><%= teacher.teacher_email %></td>
-        <td><%= teacher.admin_powers %></td>
-        <td><%= teacher.analysis_powers %></td>
-        <td><%= teacher.teacher_description %></td>
-        <td><%= teacher.color %></td>
-        <td><%= teacher.school_id %></td>
-        <td><%= teacher.teacher_password %></td>
-        <td><%= teacher.teacher_password_confirmation %></td>
-        <td>Super ID: <%= teacher.super_id %></td>
-        <td><%= link_to 'Show', teacher %></td>
-        <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
-        <td><%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-=======
 <!-- page header -->
 		<div class="page-header vertical-align">
 			<div class="col-xs-11">
@@ -70,7 +49,6 @@
 				<td><%= teacher.teacher_name %></td>
 				<td><%= teacher.admin_powers %></td>
 				<td><p class="listText"><span>FILL IN PROPER DATE</span></p></td>
->>>>>>> 7babec2b6a69c47d959fec45bc376a99d59b78de
       </tr>
       <% end %>
     </tbody>
