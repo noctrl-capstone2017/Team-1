@@ -7,7 +7,7 @@ class Teacher < ApplicationRecord
   
   # Create an accessible attribute
   # author: Meagan Moore
-  #attr_accessor :remember_token
+  attr_accessor :remember_token
   
   validates :user_name,  presence: true, length: { maximum: 75 }
   validates :teacher_icon_name,  presence: true, length: { maximum: 15 }
@@ -30,29 +30,29 @@ class Teacher < ApplicationRecord
   
   # Returns the hash digest of the given string.
   # author: Meagan Moore
-  #def Teacher.digest(string)
-  #  cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
-  #  BCrypt::Password.create(string, cost: cost)
-  #end
+  def Teacher.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
   
   # Returns a random token for remembering users
   # author: Meagan Moore
-  #def Teacher.new_token
-  #  SecureRandom.urlsafe_base64
-  #end
+  def Teacher.new_token
+    SecureRandom.urlsafe_base64
+  end
   
   # Remembers a teacher in the database for use in persistent sessions.
   # author: Meagan Moore
-  #def remember
-  #  self.remember_token = Teacher.new_token
-  #  update_attribute(:remember_digest, Teacher.digest(remember_token))
-  #end
+  def remember
+    self.remember_token = Teacher.new_token
+    update_attribute(:remember_digest, Teacher.digest(remember_token))
+  end
   
   # Returns true if the given token matches the digest.
   # author: Meagan Moore
-  #def authenticated?(remember_token)
-  #  return false if remember_digest.nil?
-  #  BCrypt::Password.new(remember_digest).is_password?(remember_token)
-  #end
+  def authenticated?(remember_token)
+    return false if remember_digest.nil?
+    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  end
   
 end

@@ -5,7 +5,8 @@
 Rails.application.routes.draw do
   root "login_session#new"
   
-  #get "teachers/:id/home",  to: 'teachers#home'
+  get "teachers/:id/home",  to: 'teachers#home'
+
   resources :roster_students
   resources :roster_squares
   resources :session_events
@@ -15,7 +16,7 @@ Rails.application.routes.draw do
   resources :teachers
   resources :schools
   resources :login_session
-  
+
   get    'login'   => 'login_session#new'
   post   'login'   => 'login_session#create'
   
@@ -27,4 +28,9 @@ Rails.application.routes.draw do
   get    'home1'   => 'static_pages#home1'
   post   'home1'   => 'static_pages#home1'
 
+  resources :super
+  get    '/super_report',    to: 'teachers#super_report'
+  get    '/admin',    to: 'teachers#admin'
+  #go back and make /super show the dashboard NOT /schools ... fix later.
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

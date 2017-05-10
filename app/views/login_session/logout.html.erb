@@ -1,50 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
- 
-<!--    Random student Art & description      -->
-<!--            By: Meagan Moore              -->  
-  <script type="text/javascript" language="JavaScript">
-      var imgs = code that gets all images
-      var imgArray = [];
-      
-      // fill an array with all student art images
-      for (var i=0; i=imgs[i]; i++)
-      {
-        imgArray.push(i);
-      }
-      
-      // Generate random number from 1 to number of images
-        var num = Math.ceil(Math.random() * imgArray.length);
-        
-      var pictureName = imgArray[num];
-      var studentArt = pictureName.split('_'[1]);
-      var studentName = studentArt.split('.'[0]);
-        
-      // Parts of the image
-      Part1 = '<img src="/assets/images/student_art/art';
-      Part2 = num;
-      Part3 = '_'
-      Part4 = studentName;
-      Part5 = '.jpg">';
-      
-      // Pick and print a random image
-      function printImage() 
-      {
-        // Put the jpg name together
-        document.write(Part1 + Part2 + Part3 + Part4 + Part5);
-      }
-      
-      // Print out corresponding decsription
-      function printDescription()
-      {
-        document.write("Student Art by " + studentName);
-      }
-      
-    </script>
-  
-  
+
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -106,19 +63,19 @@
 
 		<div class="row">
 			<div class="col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-4 text-center logout-art">
-				<!-- Print out the corresponding description -->
-				<!--            By: Meagan Moore             -->
-      <script type="text/javascript" language="JavaScript">
-          printImage();
-      </script>
+				
+				<!-- Print out the Student Art -->
+				<!--    By: Meagan Moore     -->
+        <%= image_tag(random_student_art, height: "400", alt: "Student Art") %>
+
+				
 				<br>
 				<div class="logout-art-text">
 					<p>
 						<!-- Print out the corresponding description -->
 						<!--            By: Meagan Moore             -->
-            <script type="text/javascript" language="JavaScript">
-                printDescription();
-            </script>
+						<!--         (?<=\_)(.*?)(?=\.)         -->
+            Student art by <%= random_student_art %>
 						<br>
 						<a <%= link_to "About Our Student Art", about2_path%></a>
 					</p>
