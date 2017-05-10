@@ -27,6 +27,7 @@ class SessionsController < ApplicationController
   # POST /sessions
   # POST /sessions.json
   def create
+    
     @session = Session.new(session_params)
 
     respond_to do |format|
@@ -61,6 +62,10 @@ class SessionsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to sessions_url, notice: 'Session was successfully destroyed.' }
       format.json { head :no_content }
+    
+    #log_out if logged_in?
+    #redirect_to root_url
+
     end
   end
 
