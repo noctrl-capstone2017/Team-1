@@ -1,40 +1,49 @@
+<!-- Modified by Robert Herrera -->
+<!-- Displays each schools profile schools/1 -->
 <p id="notice"><%= notice %></p>
 
-<h2>
-  <strong>School Profile - View/Edit information for school: </strong>
-  <%= @school.school_name %>
-</h2>
+<!-- page header -->
+<div class="page-header vertical-align">
+	<div class="col-xs-11">
+		<h2>School Profile<small> - view information for school <%= @school.school_icon_name %></small></h2><!-- Dynamically fills in with school id -->
+	</div>
+	<div class="col-xs-1 pull-right">
+		<div class="header-sq i-plum" >
+			<span class="fa fa-apple fa-3x teacher-icon"></span>
+		</div>
+	</div>
+</div>
+<!--End page header-->
+
 
 
 <p>
-  <strong>School icon name:</strong>
+  <strong>School ID:</strong>
   <%= @school.school_icon_name %>
-</p>
 
-<p>
-  <strong>School name:</strong>
+  <strong>Name:</strong>
   <%= @school.school_name %>
 </p>
 
 <p>
-  <strong>School email:</strong>
+  <strong>Email:</strong>
   <%= @school.school_email %>
 </p>
 
 <p>
-  <strong>School website:</strong>
+  <strong>Website:</strong>
   <%= @school.school_website %>
 </p>
-
+<p>
+  <strong>Color:</strong>
+  <%= @school.color %>
+</p>
 <p>
   <strong>School description:</strong>
   <%= @school.school_description %>
 </p>
 
-<p>
-  <strong>Color:</strong>
-  <%= @school.color %>
-</p>
+
 
 <%= link_to 'Edit', edit_school_path(@school) %> |
 <%= link_to 'Back', schools_path %>
