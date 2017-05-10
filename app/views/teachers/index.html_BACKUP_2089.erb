@@ -1,0 +1,59 @@
+<!-- NEED TO ADD IMPLEMENTATION FOR TEACHER ICONS/TEACHER SHORT AND FULL NAMES -->
+
+<p id="notice"><%= notice %></p>
+<<<<<<< HEAD
+=======
+
+>>>>>>> b8436d0a2289222492ff0043c064259221854941
+<!-- page header -->
+		<div class="page-header vertical-align">
+			<div class="col-xs-11">
+				<h2>All Teachers<small> - manage teachers at TPTE</small></h2><!-- Dynamically fills in with school id -->
+			</div>
+			<div class="col-xs-1 center-block">
+				<div class="header-sq i-plum" title="Bianca17">
+					<span class="fa fa-apple fa-3x teacher-icon"></span>
+				</div>
+			</div>
+		</div><!--End page header-->
+   
+		<!--New Teacher Button-->
+    <div class="row first-content-row">
+    	<div class="col-xs-3">
+			<form action='teachers/new'>
+				<button type="submit" class="col-sm-offset-1 btn btn-lg btn-success"><i class="fa fa-plus-square-o"></i>  
+				New Teacher</button>
+			</form>
+		</div><!--End col-->
+    </div><!--End row -->
+    
+    
+    
+    
+   	 <!--Teacher display area -->
+   	<table class="table table-striped table-hover table-responsive teachers-table">
+   		<thead>
+   			<tr>
+				  <th class="col-xs-1">Icon</th>
+				  <th>ID</th>
+				  <th>Name</th>
+				  <th>Admin</th>
+				  <th>Last Login</th>
+			</tr>
+		</thead>
+		<tbody>
+		  <% @teachers.each do |teacher| %>
+		  <tr>
+				<td>
+					<div class="table-sq i-<%= teacher.color %>">
+						<span class="fa fa-<%= teacher.teacher_icon_name %> fa-2x table-icon"></span>
+					</div>
+				</td>
+				<td><%= teacher.user_name %></td>
+				<td><%= teacher.teacher_name %></td>
+				<td><%= teacher.admin_powers %></td>
+				<td><p class="listText"><span>FILL IN PROPER DATE</span></p></td>
+      </tr>
+      <% end %>
+    </tbody>
+    </thead>

@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   resources :schools
   resources :login_session
   resources :super
-  get    '/super_report',    to: 'super#super_report'
+  get    '/super_report',    to: 'teachers#super_report'
   get    '/admin',    to: 'teachers#admin'
+  #go back and make /super show the dashboard NOT /schools ... fix later.
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
