@@ -16,7 +16,14 @@
 <br>
 
 <!-- New Student Button, unable to next "+" symbol in button -->
-<%= link_to "New Student", new_student_path, class:"col-sm-offset-1 btn btn-lg btn-success" %>
+			<div class="row">
+				<div class="col-xs-3 col-xs-offset-1">
+					<form  action="/students/new.html">
+						<button type="submit" class="col-sm-offset-1 btn btn-lg btn-success">
+							<i class="fa fa-plus-square-o"></i> New Student
+						</button>
+					</form>
+				</div>   <!-- col -->
 
 <!--Table Body -->
 <br>
@@ -38,8 +45,8 @@
     <!--SOURCE for data-link: http://stackoverflow.com/questions/9945620/making-a-table-row-into-a-link-in-rails-->
       <tr data-link = "<%= edit_student_path(student) %>">
         <td>
-          <div class="table-sq i-<%= student.color %>">                       <!--Generate Student Color-->
-					<i class="fa fa-<%= student.student_icon %> fa-2x table-icon"></i>  <!--Generate Student Icon-->
+          <div class="table-sq i-<%= student.color %>">                         <!--Generate Student Color-->
+					  <i class="fa fa-<%= student.student_icon %> fa-2x table-icon"></i>  <!--Generate Student Icon-->
 				  </div>
         </td>
         <td><%= student.student_icon_name %></td>
